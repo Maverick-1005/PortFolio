@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { motion,  useTransform, useMotionValue} from 'framer-motion';
 
 export default function About() {
@@ -90,7 +89,7 @@ export default function About() {
             >
               <div className="space-y-4">
                 <motion.p variants={item} className="text-base sm:text-lg text-foreground">
-                  Hello! I'm Ansh, currently pursuing my <span className="text-primary">B.Tech in Artificial Intelligence and Data Science</span> at Indian Institute of Information Technology, Sricity. I'm passionate about software development and problem-solving.
+                  Hello! I&apos;m Ansh, currently pursuing my <span className="text-primary">B.Tech in Artificial Intelligence and Data Science</span> at Indian Institute of Information Technology, Sricity. I&apos;m passionate about software development and problem-solving.
                 </motion.p>
                 
                 <motion.p variants={item} className="text-base sm:text-lg text-foreground">
@@ -98,7 +97,7 @@ export default function About() {
                 </motion.p>
                 
                 <motion.p variants={item} className="text-base sm:text-lg mb-6 text-foreground">
-                  I actively participate in competitive programming on platforms like <span className="text-primary">CodeForces (Pupil) and CodeChef (3-star)</span>, and have solved over 500 DSA/CP problems across various platforms. I'm also involved as a Core Member of the Gradient Club (Programming Club of IIITS). Here are some of the technologies I've been working with:
+                  I actively participate in competitive programming on platforms like <span className="text-primary">CodeForces (Pupil) and CodeChef (3-star)</span>, and have solved over 500 DSA/CP problems across various platforms. I&apos;m also involved as a Core Member of the Gradient Club (Programming Club of IIITS). Here are some of the technologies I&apos;ve been working with:
                 </motion.p>
               </div>
               

@@ -98,7 +98,7 @@ export default function Work() {
             <div className="hidden sm:flex items-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground whitespace-nowrap">
                 <span className="text-primary mr-2">{'>'} 02.</span>
-                <span className='text-white'>Some Things I've Built</span> 
+                <span className="text-white">Some Things I&apos;ve Built</span> 
               </h2>
               <motion.div 
                 className="w-full ml-4 md:ml-10 h-0 border-t-2 border-gray-400"
@@ -114,7 +114,7 @@ export default function Work() {
             <div className="sm:hidden">
               <h2 className="text-2xl font-bold text-foreground">
                 <span className="text-primary mr-2">{'>'} 02.</span>
-                <span className='text-white'>Some Things I've Built</span> 
+                <span className="text-white">Some Things I&apos;ve Built</span> 
               </h2>
               <motion.div 
                 className="w-full mt-4 h-0 border-t-2 border-gray-400"

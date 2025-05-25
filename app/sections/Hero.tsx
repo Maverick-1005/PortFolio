@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedBackground from '../components/AnimatedBackground';
 
@@ -38,7 +38,7 @@ export default function Hero() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  const texts = ["Full Stack Developer", "AI/DS Student", "Problem Solver"];
+  const texts = useMemo(() => ["Full Stack Developer", "AI/DS Student", "Problem Solver"], []);
 
   useEffect(() => {
     setMounted(true);
@@ -140,7 +140,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <span>I'm a</span>
+          <span>I&apos;m a</span>
           <motion.span 
             className="text-primary"
             animate={{ 
@@ -164,7 +164,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          I'm a 3rd year B.Tech student at <span className='text-cyan-200'>IIIT Sri City</span>, pursuing <span className='text-cyan-200'>Artificial Intelligence and Data Science</span>. I specialize in building seamless digital experiences and solving real-world problems through clean, efficient, and scalable code. My strong foundation in algorithms and data structures fuels my passion for <span className='text-cyan-200'>problem-solving and competitive programming</span>, where I constantly challenge myself to think critically and optimize under constraints. I enjoy working across the tech stack — from intuitive <span className='text-cyan-200'>front-end</span> interfaces to robust <span className='text-cyan-200'>backend</span> systems. I'm driven by curiosity, a love for learning, and a desire to build intelligent, impactful solutions.
+          I&apos;m a 3rd year B.Tech student at <span className="text-cyan-200">IIIT Sri City</span>, pursuing <span className="text-cyan-200">Artificial Intelligence and Data Science</span>. I specialize in building seamless digital experiences and solving real-world problems through clean, efficient, and scalable code. My strong foundation in algorithms and data structures fuels my passion for <span className="text-cyan-200">problem-solving and competitive programming</span>, where I constantly challenge myself to think critically and optimize under constraints. I enjoy working across the tech stack — from intuitive <span className="text-cyan-200">front-end</span> interfaces to robust <span className="text-cyan-200">backend</span> systems. I&apos;m driven by curiosity, a love for learning, and a desire to build intelligent, impactful solutions.
         </motion.p>
         
         <motion.a

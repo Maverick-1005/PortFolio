@@ -74,7 +74,7 @@ export default function Contact() {
               transition: { duration: 0.2 }
             }}
           >
-            {'>'} 03. What's Next?
+            {'>'} 03. What&apos;s Next?
           </motion.h2>
           
           <motion.h3 
@@ -92,7 +92,7 @@ export default function Contact() {
             className="text-text-muted mb-12 max-w-2xl mx-auto"
             variants={itemVariants}
           >
-            I'm currently looking for new opportunities. Whether you have a question, want to work together, or just want to say hi, my inbox is open!
+            I&apos;m currently looking for new opportunities. Whether you have a question, want to work together, or just want to say hi, my inbox is open!
           </motion.p>
 
           <motion.div
