@@ -1,56 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { FiMail, FiPhone, FiGithub, FiLinkedin } from 'react-icons/fi';
-import { motion, useAnimation } from 'framer-motion';
+import { FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
-  const [mounted, setMounted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
-  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      // Success simulation
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setSubmitMessage("Thanks for your message! I'll get back to you soon.");
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-
-      // Reset form status after a few seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-        setSubmitMessage('');
-      }, 5000);
-    }, 1500);
-  };
 
   // Animation variants
   const containerVariants = {
@@ -73,16 +26,6 @@ export default function Contact() {
         type: "spring",
         stiffness: 100
       }
-    }
-  };
-
-  // Floating animation for decorative elements
-  const floatingAnimation = {
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
     }
   };
 

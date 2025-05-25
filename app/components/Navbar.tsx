@@ -1,11 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiYoutube, FiMenu, FiX } from 'react-icons/fi';
-import { CSSProperties } from 'react';
 
 const navItems = [
   { id: '01', name: 'About', href: '#about' },
@@ -55,14 +52,6 @@ export default function Navbar() {
     }
   };
 
-  // Ensure the sidebar doesn't move when scrolling
-  const leftSidebarStyle: CSSProperties = {
-    position: 'fixed',
-    bottom: 0,
-    left: '1.5rem', // matches left-6
-    zIndex: 30
-  };
-
   if (!mounted) return null;
 
   return (
@@ -95,7 +84,7 @@ export default function Navbar() {
           {/* Navigation - Right */}
           <div className="hidden sm:block">
             <nav className="flex items-center">
-              {navItems.map((item, i) => (
+              {navItems.map((item) => (
                 <div
                   key={item.id}
                   className="px-6 md:px-8 lg:px-10"
@@ -154,7 +143,8 @@ export default function Navbar() {
               
               {/* Sidebar */}
               <motion.div
-className="fixed inset-y-0 right-0 h-screen min-h-screen w-3/4 max-w-xs bg-blue-950 border-l border-cyan-900 z-50 sm:hidden flex flex-col"                animate={{ x: 0 }}
+                className="fixed inset-y-0 right-0 h-screen min-h-screen w-3/4 max-w-xs bg-blue-950 border-l border-cyan-900 z-50 sm:hidden flex flex-col"
+                animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               >
@@ -222,38 +212,6 @@ className="fixed inset-y-0 right-0 h-screen min-h-screen w-3/4 max-w-xs bg-blue-
           )}
         </AnimatePresence>
       </motion.header>
-
-      {/* Social Links Left Side (Desktop) - Moved outside header to ensure fixed positioning
-      <div
-        className="fixed left-6 border-2 text-white border-red-500 bottom-0 flex flex-col space-y-6 items-center  md:flex"
-        style={leftSidebarStyle}
-      >
-        <a
-          href="https://github.com/ansh1005mishra"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-text-muted hover:text-primary transition-colors text-xl"
-        >
-          <FiGithub />
-        </a>
-        <a
-          href="https://linkedin.com/in/ansh-mishra"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-text-muted hover:text-primary transition-colors text-xl"
-        >
-          <FiLinkedin />
-        </a>
-        <a
-          href="https://codeforces.com/profile/ansh1005mishra"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-text-muted hover:text-primary transition-colors text-xl"
-        >
-          <FiYoutube />
-        </a>
-        <div className="h-20 w-0.5 bg-text-muted"></div>
-      </div> */}
     </>
   );
 }

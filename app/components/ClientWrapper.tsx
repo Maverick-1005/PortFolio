@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { usePathname } from 'next/navigation';
 import Navbar from './Navbar';
 import Lefty from './Lefty';
 import Righty from './Righty';
@@ -12,7 +11,6 @@ interface ClientWrapperProps {
 }
 
 export default function ClientWrapper({ children }: ClientWrapperProps) {
-  const pathname = usePathname();
 
   return (
     <>

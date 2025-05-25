@@ -34,41 +34,54 @@ const SplitText = ({ children, className = "" }: { children: string, className?:
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
   const texts = ["Full Stack Developer", "AI/DS Student", "Problem Solver"];
 
   useEffect(() => {
     setMounted(true);
     
-    const typeText = async () => {
-      for (let i = 0; i < texts.length; i++) {
-        // Type the current text
-        for (let j = 0; j <= texts[i].length; j++) {
-          setDisplayText(texts[i].substring(0, j));
-          await new Promise(resolve => setTimeout(resolve, 100));
-        }
-        
-        // Pause at the end of the text
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // Delete the current text
-        for (let j = texts[i].length; j >= 0; j--) {
-          setDisplayText(texts[i].substring(0, j));
-          await new Promise(resolve => setTimeout(resolve, 50));
-        }
-        
-        // Move to the next text (or back to the first one)
-        setCurrentTextIndex((i + 1) % texts.length);
+    let timeout: NodeJS.Timeout;
+    
+    const animateText = () => {
+      const currentText = texts[currentTextIndex];
+      const shouldDelayDeletion = !isDeleting && displayText === currentText;
+      const shouldDelayNextWord = isDeleting && displayText === '';
+      
+      if (shouldDelayDeletion) {
+        // Delay before starting to delete
+        timeout = setTimeout(() => {
+          setIsDeleting(true);
+          timeout = setTimeout(animateText, 50);
+        }, 2000);
+        return;
       }
       
-      // After going through all texts once, restart
-      typeText();
+      if (shouldDelayNextWord) {
+        // Move to next text
+        setIsDeleting(false);
+        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+        timeout = setTimeout(animateText, 50);
+        return;
+      }
+      
+      setDisplayText(prev => {
+        if (isDeleting) {
+          return prev.slice(0, -1);
+        } else {
+          return currentText.slice(0, prev.length + 1);
+        }
+      });
+      
+      // Set the next timeout
+      const nextDelay = isDeleting ? 50 : 100;
+      timeout = setTimeout(animateText, nextDelay);
     };
-    
+
     if (mounted) {
-      typeText();
+      timeout = setTimeout(animateText, 100);
       
       // Blink cursor
       const cursorInterval = setInterval(() => {
@@ -76,10 +89,11 @@ export default function Hero() {
       }, 500);
       
       return () => {
+        if (timeout) clearTimeout(timeout);
         clearInterval(cursorInterval);
       };
     }
-  }, [mounted]);
+  }, [mounted, displayText, currentTextIndex, isDeleting, texts]);
 
   if (!mounted) return null;
 

@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 interface ExperienceItem {
   company: string;
@@ -15,7 +14,6 @@ interface ExperienceItem {
 export default function Experience() {
   const [mounted, setMounted] = useState(false);
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-  const ref = useRef(null);
 
   useEffect(() => {
     setMounted(true);
@@ -47,6 +45,8 @@ export default function Experience() {
       ]
     }
   ];
+
+  if (!mounted) return null;
 
   return (
     <section id="experience" className="section py-20 min-h-screen bg-background/30">

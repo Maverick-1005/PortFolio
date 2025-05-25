@@ -1,12 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { motion,  useTransform, useMotionValue} from 'framer-motion';
 
 export default function About() {
-  const ref = useRef(null);
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
   
   // Mouse position for profile picture tilt effect
   const mouseX = useMotionValue(0);
@@ -14,9 +12,9 @@ export default function About() {
   const rotateX = useTransform(mouseY, [-300, 300], [10, -10]);
   const rotateY = useTransform(mouseX, [-300, 300], [-10, 10]);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
   const skills = [
     'JavaScript/TypeScript', 'React.js/Next.js', 'Tailwind CSS', 'Node.js', 
