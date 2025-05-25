@@ -1,0 +1,16 @@
+{
+  "name": "Ansh Mishra Portfolio",
+  "short_name": "Ansh Portfolio",
+  "description": "Portfolio website showcasing my work and skills",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "/A.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+} 
