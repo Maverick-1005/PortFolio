@@ -72,6 +72,7 @@ export default function Work() {
       image: '/uploads/project2.jpg',
       tags: ['OAuth 2.0', 'Material-UI', 'Cloudinary', 'MERN', 'Redux', 'JWT'],
       github: 'https://github.com/Maverick-1005',
+      external: 'https://vidvault.vercel.app',
       featured: true
     }
   ];
