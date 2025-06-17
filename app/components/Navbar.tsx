@@ -143,7 +143,7 @@ export default function Navbar() {
               
               {/* Sidebar */}
               <motion.div
-                className="fixed inset-y-0 right-0 h-screen min-h-screen w-3/4 max-w-xs bg-blue-950 border-l border-cyan-900 z-50 sm:hidden flex flex-col"
+                className="fixed inset-y-0 right-0 h-screen min-h-screen w-3/4 max-w-xs bg-gray-950/50 border-l border-cyan-900 z-50 sm:hidden flex flex-col"
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 300 }}
