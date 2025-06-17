@@ -63,7 +63,8 @@ export default function Work() {
       description: 'A real-time communication platform inspired by Discord, enabling seamless text, voice, and video interactions. It supports user authentication, private and public chat rooms, role-based permissions, and media sharing.',
       image: '/uploads/project1.jpg',
       tags: ['Next.js', 'Shaden-UI', 'Clerk', 'Sockets', 'Zustand', 'MySQL', 'Web-RTC'],
-      github: 'https://github.com/Maverick-1005',
+      github: 'https://github.com/Maverick-1005/Lobby',
+      external: 'https://lobii.vercel.app',
       featured: true
     },
     {
@@ -71,7 +72,7 @@ export default function Work() {
       description: 'A video streaming platform inspired by YouTube, offering features like Google login, video upload, subscriptions, playlists and watch history. Users can create channels, upload videos, subscribe to others, and engage with content.',
       image: '/uploads/project2.jpg',
       tags: ['OAuth 2.0', 'Material-UI', 'Cloudinary', 'MERN', 'Redux', 'JWT'],
-      github: 'https://github.com/Maverick-1005',
+      github: 'https://github.com/Maverick-1005/VidVault-Backend',
       external: 'https://vidvault.vercel.app',
       featured: true
     }
@@ -152,7 +153,7 @@ export default function Work() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.8 }}
                     />
-                    <div className="absolute inset-0 bg-blue-900/80"></div>
+                    <div className="absolute inset-0 bg-gray-900/80"></div>
                   </div>
                   
                   {/* Content overlay for mobile */}
