@@ -14,7 +14,7 @@ interface Project {
   featured: boolean;
 }
 
-export default function Work() {
+export default function Projects() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function Work() {
   if (!mounted) return null;
 
   return (
-    <section id="work" className="section bg-gray-900 text-cyan-200 py-20 min-h-screen">
+    <section id="projects" className="section bg-gray-900 text-cyan-200 py-20 min-h-screen">
       <div className="container px-4 sm:px-8 md:px-12 max-w-7xl mx-auto">
         <motion.div 
           className="flex flex-col"

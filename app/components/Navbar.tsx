@@ -6,7 +6,7 @@ import { FiGithub, FiLinkedin, FiYoutube, FiMenu, FiX } from 'react-icons/fi';
 
 const navItems = [
   { id: '01', name: 'About', href: '#about' },
-  { id: '02', name: 'Work', href: '#work' },
+  { id: '02', name: 'Projects', href: '#projects' },
   { id: '03', name: 'Contact', href: '#contact' },
 ];
 
