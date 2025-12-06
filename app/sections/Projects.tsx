@@ -75,6 +75,13 @@ export default function Projects() {
       github: 'https://github.com/Maverick-1005/VidVault-Backend',
       external: 'https://vidvault.vercel.app',
       featured: true
+    },
+    {
+      title: 'Briefly',
+      description: 'AI-powered news aggregator delivering real-time headlines with intelligent summaries and responsive mobile interface. Features real-time search, AI-generated summaries, and multi-source content aggregation with fallback mechanisms.',
+      image: '/uploads/project3.jpg',
+      tags: ['Next.js', 'Gemini AI', 'Tailwind-CSS', 'NewsAPI'],
+      featured: true
     }
   ];
 
