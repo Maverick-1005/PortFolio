@@ -6,8 +6,9 @@ import { FiGithub, FiLinkedin, FiYoutube, FiMenu, FiX } from 'react-icons/fi';
 
 const navItems = [
   { id: '01', name: 'About', href: '#about' },
-  { id: '02', name: 'Projects', href: '#projects' },
-  { id: '03', name: 'Contact', href: '#contact' },
+  { id: '02', name: 'Experience', href: '#experience' },
+  { id: '03', name: 'Projects', href: '#projects' },
+  { id: '04', name: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {

@@ -81,6 +81,8 @@ export default function Projects() {
       description: 'AI-powered news aggregator delivering real-time headlines with intelligent summaries and responsive mobile interface. Features real-time search, AI-generated summaries, and multi-source content aggregation with fallback mechanisms.',
       image: '/uploads/project3.jpg',
       tags: ['Next.js', 'Gemini AI', 'Tailwind-CSS', 'NewsAPI'],
+      github: 'https://github.com/Maverick-1005/Briefly',
+      external: 'https://brieflylatestnews.vercel.app/',
       featured: true
     }
   ];
@@ -106,7 +108,7 @@ export default function Projects() {
             {/* Header for larger screens */}
             <div className="hidden sm:flex items-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground whitespace-nowrap">
-                <span className="text-primary mr-2">{'>'} 02.</span>
+                <span className="text-primary mr-2">{'>'} 04.</span>
                 <span className="text-white">Some Things I&apos;ve Built</span> 
               </h2>
               <motion.div 
@@ -122,7 +124,7 @@ export default function Projects() {
             {/* Header for mobile */}
             <div className="sm:hidden">
               <h2 className="text-2xl font-bold text-foreground">
-                <span className="text-primary mr-2">{'>'} 02.</span>
+                <span className="text-primary mr-2">{'>'} 04.</span>
                 <span className="text-white">Some Things I&apos;ve Built</span> 
               </h2>
               <motion.div 
